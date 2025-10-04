@@ -11,7 +11,7 @@ import com.rafael.publication.domain.Comment;
 @FeignClient(name = "CommentClient", url = "${comment.service.url}")
 public interface CommentClient {
 
-    @GetMapping("/comments/{publicationId}")
+    @GetMapping("/{publicationId}")
     List<Comment> findAllByPublicationId(@PathVariable String publicationId);
 
 }

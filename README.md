@@ -14,3 +14,59 @@ The project idea is to create a REST API that simulates a service that may fail.
 
 - `PublicationService`: Handles the business logic for managing posts, including fetching posts from an external service and saving posts to Redis.
 - `CommentService`: Manages interactions with Redis, including saving and retrieving posts. (This is a mock)
+
+## Technologies Used
+
+- Spring Boot
+- Resilience4j
+- Redis
+- MongoDB
+- Spring Cloud OpenFeign
+- Lombok
+- Maven
+- Java 21
+- Docker (for running Redis and Mongodb)
+- Postman (for testing the API)
+- WireMock (for mocking external services)
+
+## How to Run the Project
+
+1. Clone the repository.
+2. Make sure you have Docker installed and running.
+3. Run the following command to start Redis and MongoDB using Docker:
+   ```
+   docker-compose up -d
+   ```
+4. Navigate to the project directory and run the Spring Boot application:
+   ```
+   ./mvnw spring-boot:run
+   ```
+5. Use Postman or any other API testing tool to interact with the endpoints.
+6. To stop the Docker containers, run:
+   ```
+   docker-compose down
+   ```
+
+## Note
+
+- The external service is mocked using WireMock for demonstration purposes.
+  ```json
+  {
+    "request": {
+      "method": "GET",
+      "url": "/api/v1/comments/{publicationId}"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "jsonBody": [
+        {
+          "author": "Rafael",
+          "text": "If you got here it means that the API is running fine, the wiremock worked well and the circuit is closed"
+        }
+      ]
+    }
+  }
+  ```
