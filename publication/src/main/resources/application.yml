@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8080
 
 # Mongo
 spring:
@@ -18,11 +18,11 @@ comment:
 # Resilience4j
 resilience4j.circuitbreaker:
   instances:
-    commentService:
+    comments:
       sliding-window-size: 4
       automatic-transition-from-open-to-half-open-enabled: true
       minimum-number-of-calls: 4
       permitted-number-of-calls-in-half-open-state: 2
-      # wait-duration-in-open-state: 10s
+      wait-duration-in-open-state: 10s
       # slow-call-duration-threshold: 1000
       # slow-call-rate-threshold: 10.0
