@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.rafael.publication.client.CommentClient;
 import com.rafael.publication.domain.Publication;
 import com.rafael.publication.mapper.PublicationMapper;
 import com.rafael.publication.repository.PublicationRepository;
@@ -17,6 +18,7 @@ public class PublicationServiceImpl implements PublicationService {
     
     private final PublicationRepository repository;
     private final PublicationMapper mapper;
+    private final CommentClient commentClient;
 
     @Override
     public void insert(Publication publication) {
@@ -31,8 +33,14 @@ public class PublicationServiceImpl implements PublicationService {
 
     @Override
     public Publication findById(String id) {
-        return repository.findById(id)
+        var publication = repository.findById(id)
                 .map(mapper::toPublication)
-                .orElseThrow(() -> new RuntimeException("Publication not found"));
+                .orElseThrow(() -> new RuntimeException("Publication not found"))
+        ;
+        
+        var comments = commentClient.findAllByPublicationId(id);
+        publication.setComments(comments);
+
+        return publication;
     }
 }

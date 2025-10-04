@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "comment.service.url",
+      "type": "java.lang.String",
+      "description": "URL for our Comment Service"
+    }
+  ]
+}
