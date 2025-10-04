@@ -12,7 +12,7 @@ public class PublicationEntity {
     @MongoId
     private String id;
     private String title;
-    private String imageURL;
+    private String imageUrl;
     private String text;
 
 }

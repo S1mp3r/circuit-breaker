@@ -8,7 +8,7 @@ import lombok.Data;
 public class Publication {
     
     private String title;
-    private String imageURL;
+    private String imageUrl;
     private String text;
     private List<Comment> comments;
 
