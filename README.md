@@ -49,8 +49,8 @@ The project idea is to create a REST API that simulates a service that may fail.
    ```
 
 ## Note
-
-- The external service is mocked using WireMock for demonstration purposes.
+The external service is mocked using WireMock for demonstration purposes.
+- If you want to test it, put this JSON inside of the mappings folder:
   ```json
   {
     "request": {
