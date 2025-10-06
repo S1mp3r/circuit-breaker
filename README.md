@@ -7,8 +7,8 @@ The project idea is to create a REST API that simulates a service that may fail.
 ## Endpoints
 
 - `GET /api/v1/publications`: Retrieves a list of publications. This **not** endpoint is protected by a circuit breaker.
-- `GET /api/v1//publications/{id}`: Retrieves a specific publication by its ID and all their comments. This endpoint is **not**  protected by a circuit breaker.
-- `POST /api/v1//publications`: Creates a new post. This endpoint is **not** protected by a circuit breaker.
+- `GET /api/v1/publications/{id}`: Retrieves a specific publication by its ID and all their comments. This endpoint is **not**  protected by a circuit breaker.
+- `POST /api/v1/publications`: Creates a new post. This endpoint is **not** protected by a circuit breaker.
    `GET /api/v1/comments/{id}`: Retrieves a list of comments of a specific publication by its the publication ID. This endpoint **is protected** by a circuit breaker.
 
 ## Services
