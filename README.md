@@ -11,6 +11,9 @@ The project idea is to create a REST API that simulates a service that may fail.
 - `POST /api/v1/publications`: Creates a new post. This endpoint is **not** protected by a circuit breaker.
    `GET /api/v1/comments/{id}`: Retrieves a list of comments of a specific publication by its the publication ID. This endpoint **is protected** by a circuit breaker.
 
+Run the application to see with more details:
+- `http://localhost:8080/swagger-ui/index.html`
+
 ## Services
 
 - `PublicationService`: Handles the business logic for managing publications.
@@ -18,7 +21,7 @@ The project idea is to create a REST API that simulates a service that may fail.
 
 ## Technologies Used
 
-- Spring Boot
+- Spring Boot 3.5.6
 - Resilience4j
 - Redis
 - MongoDB
@@ -29,6 +32,7 @@ The project idea is to create a REST API that simulates a service that may fail.
 - Docker (for running Redis and Mongodb)
 - Postman (for testing the API)
 - WireMock (for mocking external services)
+- Swagger (for documentation)
 
 ## How to Run the Project
 
