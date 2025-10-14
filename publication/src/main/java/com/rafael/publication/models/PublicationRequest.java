@@ -1,4 +1,4 @@
-package com.rafael.publication.model;
+package com.rafael.publication.models;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;

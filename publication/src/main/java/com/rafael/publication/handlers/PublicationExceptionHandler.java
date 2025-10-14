@@ -1,11 +1,11 @@
-package com.rafael.publication.handler;
+package com.rafael.publication.handlers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.rafael.publication.domain.ErroResponse;
+import com.rafael.publication.domains.ErroResponse;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;

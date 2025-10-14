@@ -1,13 +1,13 @@
-package com.rafael.publication.service.impl;
+package com.rafael.publication.services.impl;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.rafael.publication.client.CommentClient;
-import com.rafael.publication.domain.Comment;
-import com.rafael.publication.service.CommentService;
-import com.rafael.publication.service.RedisService;
+import com.rafael.publication.clients.CommentClient;
+import com.rafael.publication.domains.Comment;
+import com.rafael.publication.services.CommentService;
+import com.rafael.publication.services.RedisService;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;

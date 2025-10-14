@@ -1,11 +1,11 @@
-package com.rafael.publication.mapper;
+package com.rafael.publication.mappers;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import com.rafael.publication.domain.Publication;
-import com.rafael.publication.entity.PublicationEntity;
-import com.rafael.publication.model.PublicationRequest;
+import com.rafael.publication.domains.Publication;
+import com.rafael.publication.entities.PublicationEntity;
+import com.rafael.publication.models.PublicationRequest;
 
 @Mapper(componentModel = "spring")
 public interface PublicationMapper {

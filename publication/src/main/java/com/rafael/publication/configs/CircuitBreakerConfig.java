@@ -1,4 +1,4 @@
-package com.rafael.publication.config;
+package com.rafael.publication.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

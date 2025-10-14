@@ -1,12 +1,12 @@
-package com.rafael.publication.controller;
+package com.rafael.publication.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rafael.publication.domain.Publication;
-import com.rafael.publication.mapper.PublicationMapper;
-import com.rafael.publication.model.PublicationRequest;
-import com.rafael.publication.service.PublicationService;
+import com.rafael.publication.domains.Publication;
+import com.rafael.publication.mappers.PublicationMapper;
+import com.rafael.publication.models.PublicationRequest;
+import com.rafael.publication.services.PublicationService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

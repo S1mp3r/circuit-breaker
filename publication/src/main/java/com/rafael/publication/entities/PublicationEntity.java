@@ -1,4 +1,4 @@
-package com.rafael.publication.entity;
+package com.rafael.publication.entities;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;

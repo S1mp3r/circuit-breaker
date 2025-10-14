@@ -1,15 +1,15 @@
-package com.rafael.publication.service.impl;
+package com.rafael.publication.services.impl;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rafael.publication.domain.Publication;
-import com.rafael.publication.mapper.PublicationMapper;
-import com.rafael.publication.repository.PublicationRepository;
-import com.rafael.publication.service.CommentService;
-import com.rafael.publication.service.PublicationService;
+import com.rafael.publication.domains.Publication;
+import com.rafael.publication.mappers.PublicationMapper;
+import com.rafael.publication.repositories.PublicationRepository;
+import com.rafael.publication.services.CommentService;
+import com.rafael.publication.services.PublicationService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.rafael.publication.domain;
+package com.rafael.publication.domains;
 
 import lombok.Data;
 

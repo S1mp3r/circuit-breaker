@@ -1,8 +1,8 @@
-package com.rafael.publication.service;
+package com.rafael.publication.services;
 
 import java.util.List;
 
-import com.rafael.publication.domain.Publication;
+import com.rafael.publication.domains.Publication;
 
 public interface PublicationService {
 

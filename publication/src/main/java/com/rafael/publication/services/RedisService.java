@@ -1,8 +1,8 @@
-package com.rafael.publication.service;
+package com.rafael.publication.services;
 
 import java.util.List;
 
-import com.rafael.publication.domain.Comment;
+import com.rafael.publication.domains.Comment;
 
 public interface RedisService {
 
