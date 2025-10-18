@@ -14,6 +14,7 @@ public class Publication {
     private String title;
     private String imageUrl;
     private String text;
+    private String author;
     private List<Comment> comments;
 
 }

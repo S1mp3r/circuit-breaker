@@ -14,5 +14,6 @@ public class PublicationEntity {
     private String title;
     private String imageUrl;
     private String text;
+    private String author;
 
 }

@@ -1,5 +1,6 @@
 package com.rafael.publication.services.impl;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -26,13 +27,24 @@ public class CommentServiceImpl implements CommentService {
     public List<Comment> findAllByPublicationId(String publicationId) {
 
         var comments = commentClient.findAllByPublicationId(publicationId);
-        redisService.save(comments, publicationId);
+
+        try {
+            redisService.save(comments, publicationId);
+        } catch (Exception e) {
+            log.warn("[WARN] Failed to save comments in Redis for {}: {}", publicationId, e.getMessage());
+        }
 
         return comments;
     }
 
     public List<Comment> findAllByFallback(String publicationId, Throwable throwable) {
         log.warn("[WARN] fallback in comments with id - {}", publicationId);
-        return redisService.findById(publicationId);
+        
+        try {
+            return redisService.findById(publicationId);
+        } catch (Exception ex) {
+            log.error("[ERROR] Redis unavailable, returning empty comments for id {}", publicationId, ex);
+            return Collections.emptyList();
+        }
     }
 }

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -30,12 +31,14 @@ public class PublicationController {
     private final PublicationService service;
 
     @PostMapping
+    @CrossOrigin
     @ResponseStatus(value = HttpStatus.CREATED)
     public void insert(@Valid @RequestBody PublicationRequest publication) {
         service.insert(mapper.toPublication(publication));
     }
 
     @GetMapping
+    @CrossOrigin
     @ResponseStatus(value = HttpStatus.OK)
     public List<Publication> findAll() {
         var publications = service.findAll();
@@ -43,6 +46,7 @@ public class PublicationController {
     }
     
     @GetMapping("/{id}")
+    @CrossOrigin
     @ResponseStatus(value = HttpStatus.OK)
     public Publication findById(@PathVariable("id") String id) {
         return service.findById(id);

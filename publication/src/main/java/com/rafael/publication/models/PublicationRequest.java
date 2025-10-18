@@ -9,6 +9,9 @@ public class PublicationRequest {
     @NotBlank(message = "Title is required")
     private String title;
 
+    @NotBlank(message = "Author is required")
+    private String author;
+
     private String imageUrl;
 
     @NotBlank(message = "Text is required")
