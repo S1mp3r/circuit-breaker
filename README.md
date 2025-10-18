@@ -7,17 +7,19 @@ The project idea is to create a REST API that simulates a service that may fail.
 ## Endpoints
 
 - `GET /api/v1/publications`: Retrieves a list of publications. This **not** endpoint is protected by a circuit breaker.
-- `GET /api/v1/publications/{id}`: Retrieves a specific publication by its ID and all their comments. This endpoint is **not**  protected by a circuit breaker.
+- `GET /api/v1/publications/{id}`: Retrieves a specific publication by its ID and all their comments. This endpoint is **not** protected by a circuit breaker.
 - `POST /api/v1/publications`: Creates a new post. This endpoint is **not** protected by a circuit breaker.
-   `GET /api/v1/comments/{id}`: Retrieves a list of comments of a specific publication by its the publication ID. This endpoint **is protected** by a circuit breaker.
+- `POST /api/v1/comments`: Creates a new comment to a post. This endpoint it **not** protected by a circuit breaker.
+- `GET /api/v1/comments/{id}`: Retrieves a list of comments of a specific publication by its the publication ID. This endpoint **is protected** by a circuit breaker and can only be access from `/api/v1/publication/{id}`.
 
 Run the application to see with more details:
+
 - `http://localhost:8080/swagger-ui/index.html`
 
 ## Services
 
 - `PublicationService`: Handles the business logic for managing publications.
-- `CommentService`: Handles the business logic for managing comments, including saving and retrieving comments in Redis while the system is offline. (This is a mock)
+- `CommentService`: Handles the business logic for managing comments, including saving and retrieving comments in Redis while the system is offline.
 
 ## Technologies Used
 
@@ -47,31 +49,23 @@ Run the application to see with more details:
    ./mvnw spring-boot:run
    ```
 5. Use Postman or any other API testing tool to interact with the endpoints.
-6. To stop the Docker containers, run:
+6. Navigate to the frontend file and run the npm install:
+
+```
+npm i
+```
+
+7. When the installation is completed, run:
+
+```
+npm run dev
+```
+
+8. To stop the Docker containers, run:
    ```
    docker-compose down
    ```
 
-## Note
-The external service is mocked using WireMock for demonstration purposes.
-- If you want to test it, put this JSON inside of the mappings folder:
-  ```json
-  {
-    "request": {
-      "method": "GET",
-      "url": "/api/v1/comments/{publicationId}"
-    },
-    "response": {
-      "status": 200,
-      "headers": {
-        "Content-Type": "application/json"
-      },
-      "jsonBody": [
-        {
-          "author": "Rafael",
-          "text": "If you got here it means that the API is running fine, the wiremock worked well and the circuit is closed"
-        }
-      ]
-    }
-  }
-  ```
+# Note
+
+This application is running on Vercel, to see it... click here:
