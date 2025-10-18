@@ -1,0 +1,11 @@
+server:
+  port: 8082
+
+# Mongo
+spring:
+  data:
+    mongodb:
+      uri: mongodb://root:example@localhost:27017/
+      auto-index-creation: true
+      authentication-database: admin
+      database: circuit-breaker
